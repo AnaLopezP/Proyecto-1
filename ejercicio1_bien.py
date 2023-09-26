@@ -4,7 +4,7 @@ class Matriz():
         
         
 class Traspuesta(Matriz):
-    def __init__(self, elementos, list):
+    def __init__(self, elementos: list):
         super().__init__(elementos)
         
     def traspuesta(self):
@@ -12,7 +12,7 @@ class Traspuesta(Matriz):
     #es una buena opcion para elementos pequeños, pero si es grande peta. tendría que ser recursivo
     
 class Imprimir(Matriz):
-    def __init__(self, elementos, list):
+    def __init__(self, elementos: list):
         super().__init__(elementos)
         
     def imprimir(self):
