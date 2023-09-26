@@ -4,19 +4,19 @@ class Matriz():
         
         
 class Traspuesta(Matriz):
-    def __init__(self, elementos: list):
-        super().__init__(elementos)
+    def __init__(self, matriz):
+        self.matriz = matriz
         
     def traspuesta(self):
-        return Matriz([[fila[i] for fila in self.elementos] for i in range(len(self.elementos[0]))]) 
+        return Matriz([[fila[i] for fila in self.matriz.elementos] for i in range(len(self.matriz.elementos[0]))]) 
     #es una buena opcion para elementos pequeños, pero si es grande peta. tendría que ser recursivo
     
 class Imprimir(Matriz):
-    def __init__(self, elementos: list):
-        super().__init__(elementos)
+    def __init__(self, matriz: Matriz):
+        self.matriz = matriz
         
     def imprimir(self):
-        for fila in self.elementos:
+        for fila in self.matriz.elementos:
             print(fila)
             
             
@@ -41,9 +41,9 @@ class Lanzador(Imprimir, Traspuesta):
     
     def lanzar(self):
         print("La matriz es: ")
-        self.imprimir()
+        self.imprimir.imprimir()
         print("La matriz traspuesta es: ")
-        traspuesta_resultado = self.traspuesta.calcular_traspuesta()
+        traspuesta_resultado = self.traspuesta.traspuesta()
         imprimir_traspuesta = Imprimir(traspuesta_resultado)
         imprimir_traspuesta.imprimir()
         
