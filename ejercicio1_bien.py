@@ -1,5 +1,5 @@
 class Matriz():
-    def __init__(self, elementos, list):
+    def __init__(self, elementos: list):
         self.elementos = elementos
         
         
@@ -28,7 +28,9 @@ class Lanzador(Imprimir, Traspuesta):
         self.cantidad_filas = int(input("numero de filas: "))
         self.cantidad_columnas = int(input("numero de columnas: "))
         self.crear_matriz()
-        super().__init__(self.elementos)
+        self.matriz = Matriz(self.elementos)
+        self.traspuesta = Traspuesta(self.matriz)
+        self.imprimir = Imprimir(self.matriz)
         
     def crear_matriz(self):
         for i in range(self.cantidad_filas):
@@ -38,15 +40,19 @@ class Lanzador(Imprimir, Traspuesta):
             self.elementos.append(fila)    
     
     def lanzar(self):
+        print("La matriz es: ")
         self.imprimir()
         print("La matriz traspuesta es: ")
-        self.traspuesta.imprimir()
+        traspuesta_resultado = self.traspuesta.calcular_traspuesta()
+        imprimir_traspuesta = Imprimir(traspuesta_resultado)
+        imprimir_traspuesta.imprimir()
+        
         
             
-            
-#hay que hacer una clase lanzador que haga esta weá. bueno lo hace el miguel ohara
-m = Imprimir([1, 2], [3, 4])
-m.imprimir()
-
-t = Traspuesta(m.elementos)
-print(t.traspuesta().elementos)
+class Main():
+    def __init__(self):
+        self.lanzador = Lanzador()
+        self.lanzador.lanzar()
+        
+if __name__ == "__main__":
+    Main()
