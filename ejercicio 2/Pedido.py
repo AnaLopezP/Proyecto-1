@@ -1,8 +1,7 @@
 class Pedido:
-    def __init__(self, n_pedido, usuario, pizza, bebida, postre, precio):
-        self.n_pedido = n_pedido
-        self.usuario = usuario
+    def __init__(self,cliente, pizza, tamaño, ingredientes, precio):
+        self.cliente = cliente
+        self.tamaño = tamaño
         self.pizza = pizza
-        self.bebida = bebida
-        self.postre = postre
+        self.ingredientes = ingredientes
         self.precio = precio
