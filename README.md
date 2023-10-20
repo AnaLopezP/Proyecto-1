@@ -1,3 +1,3 @@
-# Proyecto 1
+# Pizzeria
 
 Link repo: https://github.com/AnaLopezP/Proyecto-1
