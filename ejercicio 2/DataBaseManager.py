@@ -2,6 +2,7 @@ from Autenticador import Authenticator
 from Usuario import Usuario
 import csv
 import config
+import concurrent.futures
 
 # Clase encargada de manejar las operaciones de la base de datos de usuarios
 class DataBaseManager:
